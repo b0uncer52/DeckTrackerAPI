@@ -29,10 +29,12 @@ namespace DeckTrackerAPI.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime DateCreated { get; set; }
 
-        public ICollection<Record> Records { get; set; }
-        //[InverseProperty("WinningVersion")]
-        //public ICollection<Record> VersionWins { get; set; }
-        //[InverseProperty("LosingVersion")]
-        //public ICollection<Record> VersionLosses { get; set; }
+        //public ICollection<Record> Records { get; set; }
+        [InverseProperty("WinningVersion")]
+        [NotMapped]
+        public ICollection<Record> VersionWins { get; set; }
+        [InverseProperty("LosingVersion")]
+        [NotMapped]
+        public ICollection<Record> VersionLosses { get; set; }
     }
 }

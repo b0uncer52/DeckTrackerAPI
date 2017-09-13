@@ -22,12 +22,10 @@ namespace DeckTrackerAPI.Models
 
         public ICollection<TeamMember> TeamMembers {get; set;}
         public ICollection<Models.Version> Versions {get; set;}
-        //public ICollection<Record> Records { get; set; }
+        public ICollection<Record> Records { get; set; }
         [InverseProperty("Winner")]
-        [NotMapped]
         public ICollection<Record> Wins { get; set; }
         [InverseProperty("Loser")]
-        [NotMapped]
         public ICollection<Record> Losses { get; set; }
     }
 }

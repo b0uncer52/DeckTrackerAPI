@@ -13,25 +13,21 @@ namespace DeckTrackerAPI.Models
         [Required]
         public int WinnerUserId {get; set;}
         [ForeignKey("WinnerUserId")]
-        [NotMapped]
         public User Winner {get; set;}
 
         [Required]
         public int LoserUserId { get; set; }
         [ForeignKey("LoserUserId")]
-        [NotMapped]
         public User Loser { get; set; }
 
         [Required]
         public int WinningVersionId {get; set; }
         [ForeignKey("WinningVersionId")]
-        [NotMapped]
         public Models.Version WinningVersion {get; set;}
 
         [Required]
         public int LoserVersionId { get; set; }
         [ForeignKey("LoserVersionId")]
-        [NotMapped]
         public Version LosingVersion { get; set; }
 
         [Required]
